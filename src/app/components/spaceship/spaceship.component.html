@@ -1,0 +1,13 @@
+<div class="spaceship-container">
+  <div class="loading-results" *ngIf="isLoading | async">
+    <p>Loading Results</p>
+  </div>
+  <div class="shipDisplay" *ngIf="(isLoading | async) === false">
+    <ul class="spaceship-list-display">
+      <li *ngFor="let ship of spaceships | async">
+        <p>Spaceship Name: {{ ship.name }} Classification: {{ ship.classification }}</p>
+      </li>
+    </ul>
+  </div>
+
+</div>
